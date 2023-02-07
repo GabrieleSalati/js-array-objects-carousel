@@ -32,21 +32,22 @@ const prevEl = document.querySelector(".prev");
 
 // FUNZIONE CAROSELLO
 
+let activeImage = 0;
 
+for (const image of images) {
 
-for (i = 0; i < images.length; i++) {
+    for (i = 0; i < images.length; i++) {
 
-    const currentImage = images[i];
+        let slideClasses = "image";
 
-    let slideClasses = "image";
+        if (i == activeImage) {
+            slideClasses += "active"
+        }
 
-    if (i == 0) {
-        slideClasses += "active"
-    }
-
-    const slide = `
-	<img class="${slideClasses}" src="${currentImage[i].image}" alt="">
+        const slide = `
+	<img class="${slideClasses}" src="${images[i].image}" alt="">
 	`;
 
-    carouselEl.innerHTML += slide;
+        carouselEl.innerHTML += slide;
+    }
 }
