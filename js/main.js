@@ -26,18 +26,27 @@ const images = [
 
 // OGGETTI DEL DOM
 
-const carouselEl = document.querySelector("carousel");
-const nextEl = document.querySelector("next");
-const prevEl = document.querySelector("prev");
+const carouselEl = document.querySelector(".carousel");
+const nextEl = document.querySelector(".next");
+const prevEl = document.querySelector(".prev");
 
 // FUNZIONE CAROSELLO
 
-let actualImg = 0;
+
 
 for (i = 0; i < images.length; i++) {
-    const actualImg = images[i];
 
-    if (i == actualImg) {
-        image = classlist.add("active");
+    const currentImage = images[i];
+
+    let slideClasses = "image";
+
+    if (i == 0) {
+        slideClasses += "active"
     }
+
+    const slide = `
+	<img class="${slideClasses}" src="${currentImage[i].image}" alt="">
+	`;
+
+    carouselEl.innerHTML += slide;
 }
