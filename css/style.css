@@ -39,3 +39,11 @@ img {
     left: 2%;
     padding-left: 10px;
 }
+
+.image {
+    display: none;
+}
+
+.image.active {
+    display: block;
+}
